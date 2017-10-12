@@ -1,28 +1,32 @@
 <template>
-  <div>
-    <form method="post" @submit.prevent="postTodo()">
-        <input type="text" name="todo" placeholder="input todo " v-model="post.task">
-        <button name="button">add todo</button>
-      </form>
-      <table>
-        <thead>
-          <tr>
-            <td>Todo</td>
-            <td>Done</td>
-            <td>Actions</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="todo in todos">
-            <td>{{ todo.task }}</td>
-            <div class="ui toggle checkbox">
-              <input class="ui toggle checkbox" type="checkbox" v-on:click="editStatusTodo(todo)">
-              <label><b>{{ todo.status }}</b></label>
-            </div>
-            <td><button type="submit" @click="deleteTodo(todo._id)">hapus</button></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <form method="post" @submit.prevent="postTodo()">
+            <input type="text" name="todo" placeholder="input todo " v-model="post.task">
+            <button name="button">add todo</button>
+          </form>
+          <table>
+            <thead>
+              <tr>
+                <td>Todo</td>
+                <td>Done</td>
+                <td>Actions</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="todo in todos">
+                <td>{{ todo.task }}</td>
+                <div class="ui toggle checkbox">
+                  <input class="ui toggle checkbox" type="checkbox" @click="editStatusTodo(todo)">
+                  <label><b>{{ todo.status }}</b></label>
+                </div>
+                <td><button type="submit" @click="deleteTodo(todo._id)">hapus</button></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,6 +1,24 @@
 <template>
   <div>
-
+    <form method="post" @submit.prevent="postTodo()">
+        <input type="text" name="todo" placeholder="input todo " v-model="post">
+        <button name="button">add todo</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <td>Todo</td>
+            <td>Done</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="todo in todos">
+            <td>{{ todo.task }}</td>
+            <td><button type="submit" @click="deleteTodo(todo._id)">hapus</button></td>
+          </tr>
+        </tbody>
+      </table>
   </div>
 </template>
 

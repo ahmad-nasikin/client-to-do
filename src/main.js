@@ -6,7 +6,7 @@ import router from './router'
 import axios from 'axios'
 
 Vue.prototype.$http = axios.create({
-  baseURL: 'http://35.187.251.216/'
+  baseURL: 'http://35.185.187.179/'
 })
 Vue.config.productionTip = false
 

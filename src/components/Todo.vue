@@ -15,6 +15,10 @@
         <tbody>
           <tr v-for="todo in todos">
             <td>{{ todo.task }}</td>
+            <div class="ui toggle checkbox">
+              <input class="ui toggle checkbox" type="checkbox" v-on:click="editStatusTodo(todo)">
+              <label><b>{{ todo.status }}</b></label>
+            </div>
             <td><button type="submit" @click="deleteTodo(todo._id)">hapus</button></td>
           </tr>
         </tbody>

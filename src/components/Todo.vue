@@ -26,6 +26,9 @@
             </tbody>
           </table>
       </div>
+        <div>
+          <button @click="logout">Logout</button>
+        </div>
     </div>
   </div>
 </template>
